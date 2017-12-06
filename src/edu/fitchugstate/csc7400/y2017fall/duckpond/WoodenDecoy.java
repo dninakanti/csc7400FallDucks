@@ -17,19 +17,10 @@ public class WoodenDecoy extends Duck {
    */
   public WoodenDecoy() {
     super("decoy_still.bmp", null, "decoy_swim.gif");
+	flyBehaviour = new FlyNoWay();
+	quackBehaviour = new SilenceQuack();
+	swimBehaviour = new DefaultSwim();
+
   }
 
-  /** 
-   *  Wooden decoys don't fly.
-   */
-  public void fly() {
-    System.out.println("Decoy still swims");
-  }
-
-  /** 
-   *  Wooden decoys don't quack
-   */
-  public void quack() {
-    System.out.println("Decoy is silent");
-  }
 }

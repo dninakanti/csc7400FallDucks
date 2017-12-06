@@ -17,19 +17,9 @@ public class RubberDuck extends Duck {
    */
   public RubberDuck() {
 	super("rubber_duck_still.bmp", null, "rubber_duck_swim.gif");
+	flyBehaviour = new FlyNoWay();
+	quackBehaviour = new Squeak();
+	swimBehaviour = new DefaultSwim();
   }
 
-  /** 
-   *  Rubber duck don't fly
-   */
-  public void fly() {
-    System.out.println("Rubber duck continues to swim");
-  }
-
-  /** 
-   *  Squeaks like a rubber duck.
-   */
-  public void quack() {
-    System.out.println("Squeak");
-  }
 }

@@ -20,7 +20,7 @@ public class DuckPond {
    * 
    * @param newDuck duck to add 
    */
-  public void addDuck(DuckType newDuck) {
+  public void addDuck(Duck newDuck) {
     this.ducks.add(newDuck);
   }
 
@@ -29,7 +29,7 @@ public class DuckPond {
    */
   public void swimming() {
 	this.drawPond();
-    for (DuckType duck: this.ducks) {
+    for (Duck duck: this.ducks) {
       duck.quack();
       duck.swim();
     }
@@ -40,7 +40,7 @@ public class DuckPond {
    */
   public void spook() {
     this.drawSky();
-    for (DuckType duck: this.ducks) {
+    for (Duck duck: this.ducks) {
         duck.quack();
         duck.quack();
         duck.fly();
@@ -61,5 +61,5 @@ public class DuckPond {
   /** 
    *  All the ducks that will be displayed
    */
-  protected List<DuckType> ducks = new ArrayList<DuckType>();
+  protected List<Duck> ducks = new ArrayList<Duck>();
 }

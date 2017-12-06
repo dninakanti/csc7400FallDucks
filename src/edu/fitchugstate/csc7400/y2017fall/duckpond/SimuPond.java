@@ -18,7 +18,7 @@ public class SimuPond {
   public static void main(String[] args) {
 	System.out.println("Adding ducks to duck pond");
 	addDuck(new Mallard());
-	addDuck(new Mallard());
+	//addDuck(new Mallard());
 	addDuck(new Redhead());
 	addDuck(new RubberDuck());
 	addDuck(new WoodenDecoy());
@@ -34,7 +34,7 @@ public class SimuPond {
    * Adds a duck to the pond, just a helper function
    * @param duck the duck to add to the pond
    */
-  public static void addDuck(DuckType duck) {
+  public static void addDuck(Duck duck) {
 	duck.display();
     pond.addDuck(duck);
   }

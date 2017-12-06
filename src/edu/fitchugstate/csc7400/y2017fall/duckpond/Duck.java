@@ -15,7 +15,7 @@ import external.GifImpl;
 /** 
  *  Base duck class that will be used for ducks on the pond
  */
-public class Duck implements DuckType {
+public abstract class Duck { 
   /** 
    *  Creates a duck object given the files that will be used for displaying and animating
    *  
@@ -28,7 +28,10 @@ public class Duck implements DuckType {
     this.flying = this.createGif(flyingGifFilename);
     this.swimming = this.createGif(swimmingGifFilename);
   }
-
+  
+  protected FlyBehaviour flyBehaviour;
+  protected QuackBehaviour quackBehaviour;
+  protected SwimBehaviour swimBehaviour;
   /** 
    *  Displays a still of the duck using bitmap
    */
@@ -38,23 +41,29 @@ public class Duck implements DuckType {
 
   /** 
    *  Displays a flying animation using the GIF file.
+   *  Describes fly action
+   *  
    */
   public void fly() {
     this.flying.animate();
+    flyBehaviour.fly();
   }
 
   /** 
-   *  Makes a quacking sound
+   * Describes quack action
+   * 
    */
   public void quack() {
-    System.out.println("Quack");
+	  quackBehaviour.quack();
   }
 
   /** 
    *  Shows a swimming animation using the GIF file
+   *  Describes swim action
    */
   public void swim() {
     this.swimming.animate();
+    swimBehaviour.swim();
   }
 
   /** 

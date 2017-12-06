@@ -14,8 +14,13 @@ public class Mallard extends Duck {
 
   /** 
    *  Creates a new Mallard duck with appropriate bitmaps and GIFs
+   *   Assign fly, quack and swim actions
    */
   public Mallard() {
     super("mallard_still.bmp", "mallard_fly.gif", "mallad_swim.gif");
+    flyBehaviour = new DefaultFly();
+	quackBehaviour = new Quack();
+	swimBehaviour = new DefaultSwim();
   }
+  
 }
