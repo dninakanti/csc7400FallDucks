@@ -15,6 +15,6 @@ public class SilenceQuack implements QuackBehaviour
 {
     public void quack()
     {
-	System.out.println("<< silence >>");
+    	System.out.println("Decoy is silent");
     }
 }

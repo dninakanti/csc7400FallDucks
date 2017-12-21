@@ -18,7 +18,7 @@ public class SimuPond {
   public static void main(String[] args) {
 	System.out.println("Adding ducks to duck pond");
 	addDuck(new Mallard());
-	//addDuck(new Mallard());
+	addDuck(new Mallard());
 	addDuck(new Redhead());
 	addDuck(new RubberDuck());
 	addDuck(new WoodenDecoy());

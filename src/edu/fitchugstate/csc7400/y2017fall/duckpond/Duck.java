@@ -23,10 +23,11 @@ public abstract class Duck {
    * @param flyingGifFilename the flying GIF file name
    * @param swimmingGifFilename the swimming GIF file name
    */
-  public Duck(String bitmapFilename, String flyingGifFilename, String swimmingGifFilename) {
-    this.still = this.createBitmap(bitmapFilename);
-    this.flying = this.createGif(flyingGifFilename);
-    this.swimming = this.createGif(swimmingGifFilename);
+  public Duck(String bitmapFilename, AbstractBehaviorFactory factory) {
+	  this.still = this.createBitmap(bitmapFilename);  
+	  this.flyBehaviour = factory.createFlyBehavior(); 
+	  this.swimBehaviour = factory.createSwimBehavior();
+	  this.quackBehaviour = factory.createQuackBehavior();
   }
   
   protected FlyBehaviour flyBehaviour;
@@ -45,7 +46,6 @@ public abstract class Duck {
    *  
    */
   public void fly() {
-    this.flying.animate();
     flyBehaviour.fly();
   }
 
@@ -62,7 +62,6 @@ public abstract class Duck {
    *  Describes swim action
    */
   public void swim() {
-    this.swimming.animate();
     swimBehaviour.swim();
   }
 
@@ -85,13 +84,5 @@ public abstract class Duck {
    */
   protected Bitmap still;
 
-  /** 
-   *  GIF of duck flying
-   */
-  protected GIF flying;
 
-  /** 
-   *  GIF of duck swimming
-   */
-  protected GIF swimming;
 }

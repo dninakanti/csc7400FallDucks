@@ -16,10 +16,7 @@ public class RubberDuck extends Duck {
    *  Creates a new rubber duck
    */
   public RubberDuck() {
-	super("rubber_duck_still.bmp", null, "rubber_duck_swim.gif");
-	flyBehaviour = new FlyNoWay();
-	quackBehaviour = new Squeak();
-	swimBehaviour = new DefaultSwim();
+    super("rubber_duck_still.bmp", new RubberDuckBehaviorFactory(null, "rubber_duck_swim.gif"));
   }
 
 }

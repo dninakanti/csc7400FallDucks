@@ -16,11 +16,7 @@ public class WoodenDecoy extends Duck {
    *  Creates a new wooden decoy with appropriate bitmaps and GIFs
    */
   public WoodenDecoy() {
-    super("decoy_still.bmp", null, "decoy_swim.gif");
-	flyBehaviour = new FlyNoWay();
-	quackBehaviour = new SilenceQuack();
-	swimBehaviour = new DefaultSwim();
-
+	super("decoy_still.bmp", new DecoyBehaviorFactory(null, "decoy_swim.gif"));
   }
 
 }

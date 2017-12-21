@@ -16,9 +16,6 @@ public class Redhead extends Duck {
    *  Creates new redhead duck with appropriate bitmaps and GIFs.
    */
   public Redhead() {
-	super("redhead_still.bmp", "redhead_fly.gif", "redhead_swim.gif");
-    flyBehaviour = new DefaultFly();
-	quackBehaviour = new Quack();
-	swimBehaviour = new DefaultSwim();
+	super("redhead_still.bmp", new DuckBehaviorFactory("redhead_fly.gif", "redhead_swim.gif"));
   }
 }

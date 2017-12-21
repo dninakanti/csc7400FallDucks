@@ -8,15 +8,13 @@
 package edu.fitchugstate.csc7400.y2017fall.duckpond;
 
 /**
- * 
  * @author divya ninakanti & nitesh vuppula
- * Default fly implementation for ducks
+ * Implements Quack from  QuackBehaviour
  */
-public class DefaultFly implements FlyBehaviour {
-
-	@Override
-	public void fly() {
-		System.out.println("Hurray, I'm flying!!!");
-	}
-
+public class SimpleQuack implements QuackBehaviour
+{
+    public void quack()
+    {
+    	System.out.println("Quack");
+    }
 }
